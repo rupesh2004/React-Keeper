@@ -1,0 +1,287 @@
+/* General Reset and Body Styles */
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+  justify-content: flex-start; /* Align items to the top */
+  align-items: center; /* Center horizontally */
+  background-color: #f4f4f4;
+  font-family: "Arial", sans-serif;
+}
+
+/* Navbar - Fixed and Styling */
+.container {
+  width: 100%;
+  background-color: #f5ba13;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: fixed; /* Changed to fixed for consistent visibility */
+  top: 0;
+  z-index: 1000; /* Keep navbar on top of other content */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heading {
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-size: 28px; /* Slightly reduced font size for better fit */
+  font-weight: 200;
+  margin-left: 20px;
+  font-family: "McLaren", sans-serif;
+}
+
+/* Input Form Styling */
+.input-container {
+  background-color: white;
+  padding: 20px; /* Adjust padding */
+  border-radius: 10px;
+  font-family: "McLaren", sans-serif;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Increased shadow for depth */
+  width: 700px; /* Increased width for larger screens */
+  max-width: 90%; /* For smaller screens */
+  text-align: center;
+  margin: 0 auto; /* Center horizontally */
+  margin-top: 100px; /* Add top margin */
+  animation: slideIn 0.8s ease-in-out; /* Animation for card appearance */
+}
+
+.input-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Animation for the input card */
+@keyframes slideIn {
+  from {
+      transform: translateY(-20px);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+/* Input group for the form */
+.input-group {
+  display: flex;
+  flex-direction: row; /* Horizontal layout */
+  justify-content: space-between; /* Space between input fields and button */
+  align-items: center; /* Center align items vertically */
+  margin-top: 15px; /* Add margin for better spacing */
+  flex-wrap: wrap; /* Ensure input elements wrap on smaller screens */
+}
+
+.input-group input,
+.input-group textarea {
+  margin-right: 10px; /* Space between input fields */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  flex: 1; /* Adjust input size for responsive layout */
+  min-width: 150px; /* Minimum width for input fields */
+  max-width: 100%; /* Full width for mobile */
+}
+
+.input-group textarea {
+  height: 40px; /* Adjust height for textarea */
+  resize: none;
+  flex: 2; /* Give textarea more space */
+}
+
+.input-group button {
+  padding: 10px 20px; /* Adjust button padding */
+  background-color: #f5ba13;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.8s ease; /* Smooth transition on hover */
+  min-width: 100px; /* Minimum width for button */
+}
+
+.input-group button:hover {
+  background-color: #d9940b;
+}
+
+/* Cards Container */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 30px; /* Adjusted to provide space for fixed navbar */
+  flex-grow: 1; /* Allows this section to grow and push footer down */
+}
+
+/* Individual Note Card Styling */
+.cards {
+  width: 300px; /* Fixed width for larger screens */
+  max-width: 90%; /* Full width for smaller screens */
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff; /* Default background color */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  animation: fadeIn 1s ease-in; /* Animation for card appearance */
+  font-family: "McLaren", sans-serif;
+}
+
+/* Card Color Variations */
+.cards:nth-child(odd) {
+  background-color: #e3f2fd; /* Light blue for odd cards */
+}
+
+.cards:nth-child(even) {
+  background-color: #ffe0b2; /* Light orange for even cards */
+}
+
+/* Keyframes for card animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.95);
+  }
+  to {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Hover Effects for Cards */
+.cards:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Text Styling for Notes */
+.note-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.note-content {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Action Buttons (Edit & Delete) */
+.action-buttons {
+  display: flex;
+  gap: 15px; /* Space between edit and delete buttons */
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Edit Button Styling */
+.edit-button {
+  background-color: #17a2b8; /* Light blue background */
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-button:hover {
+  background-color: #138496; /* Darker blue on hover */
+  transform: scale(1.1); /* Slightly larger on hover */
+}
+
+/* Delete Button Styling */
+.delete-button {
+  background-color: #ff3860; /* Red background */
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s; /* Smooth hover effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-button:hover {
+  background-color: #d92648; /* Darker red on hover */
+  transform: scale(1.1); /* Slightly larger on hover */
+}
+
+/* Adjust Icon Sizes in Buttons */
+.edit-button svg, .delete-button svg {
+  font-size: 20px; /* Adjusted icon size */
+  color: white; /* Icon color */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  /* Adjust heading font size for larger tablets */
+  .heading {
+      font-size: 22px; /* Smaller font for smaller tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Smaller Input Form Width */
+  .input-container {
+      width: 90%; /* Adapt input form for smaller screens */
+      margin-top: 80px; /* Adjust margin to accommodate navbar */
+  }
+
+  /* Cards Adjust to Full Width on Small Screens */
+  .cards {
+      width: 100%; /* Make cards take full width on smaller screens */
+      margin: 10px 0; /* Adjust margin for better spacing */
+  }
+
+  /* Adjust Input Sizes */
+  .input-group input,
+  .input-group textarea {
+      flex: 1; /* Allow inputs to fill available space */
+      margin-bottom: 10px; /* Space below inputs */
+  }
+
+  /* Reduce button size for smaller screens */
+  .input-group button {
+      padding: 8px 16px; /* Smaller padding for buttons */
+  }
+
+  /* Smaller Font Size for Heading */
+  .heading {
+      font-size: 24px; /* Smaller font for smaller screens */
+  }
+}
+
+/* Footer Styling */
+.footer {
+  background-color: #333;
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ccc;
+}
